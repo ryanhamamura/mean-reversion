@@ -24,7 +24,7 @@ def get_streaks(returns, streak_length, streak_type="wins"):
 
     # Count consecutive streaks
     for i in range(len(streaks)):
-        if streaks.iloc[i] == 1:
+        if streaks.iloc[i].item() == 1:
             streak_count += 1
         else:
             if streak_count >= streak_length:
@@ -114,6 +114,6 @@ loss_data = pd.DataFrame(
 )
 
 # Set up the plot style
-plt.style.use("seaborn")
+plt.style.use("seaborn-v0_8")
 fig = plt.figure(figsize=(15, 20))
 gs = fig.add_gridspec(4, 3)
